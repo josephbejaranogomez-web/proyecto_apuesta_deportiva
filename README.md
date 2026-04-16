@@ -4,7 +4,7 @@
 Este proyecto es una plataforma de predicción deportiva desarrollada en Python con Flask.
 
 ## Cómo ejecutarlo
-
+copia el codigo y lo pegas en visual estudio code 
 1. Instalar Flask: para ello debes ir a la terminal y escribir esto:
 pip install flask
 
