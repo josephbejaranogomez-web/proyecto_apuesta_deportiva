@@ -2,7 +2,7 @@ from flask import Flask, request, redirect, url_for, render_template_string
 
 app = Flask(__name__)
 
-# 🔹 Base de datos simulada
+
 usuarios = []
 
 eventos = [
@@ -11,7 +11,7 @@ eventos = [
     {"id": 3, "equipos": "Liverpool vs Chelsea"}
 ]
 
-# 🔹 LOGIN
+
 @app.route('/')
 def inicio():
     return render_template_string('''
@@ -39,7 +39,7 @@ def inicio():
     </html>
     ''')
 
-# 🔹 REGISTRO
+
 @app.route('/registro', methods=['GET', 'POST'])
 def registro():
     if request.method == 'POST':
@@ -71,7 +71,7 @@ def registro():
     </html>
     ''')
 
-# 🔹 LOGIN PROCESO
+
 @app.route('/login', methods=['POST'])
 def login():
     correo = request.form['correo']
@@ -83,7 +83,7 @@ def login():
 
     return "<h3>❌ Error en login</h3>"
 
-# 🔹 DASHBOARD
+
 @app.route('/dashboard')
 def dashboard():
     return render_template_string('''
@@ -114,7 +114,7 @@ def dashboard():
     </html>
     ''', eventos=eventos)
 
-# 🔹 PREDICCIÓN
+
 @app.route('/prediccion/<int:id>')
 def prediccion(id):
     resultado = {
@@ -146,7 +146,7 @@ def prediccion(id):
     </html>
     ''', r=resultado)
 
-# 🔹 SIMULADOR
+
 @app.route('/simulador', methods=['GET', 'POST'])
 def simulador():
     ganancia = None
